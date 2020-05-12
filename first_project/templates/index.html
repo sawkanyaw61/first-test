@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+  </head>
+  <body>
+    <h1>Home page</h1>
+    <a href="{% url 'about' %}">contact</a>
+    <a href="{% url 'result' %}">Result</a>
+    <form action="{% url 'result' %}">
+      {% csrf_token %}
+      <input type="text" name="user_input">
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
